@@ -2,13 +2,13 @@ import java.util.Collections;
 import java.util.List;
 
 public class Resume {
-    private int id;
-    private String fullName;
-    private String phone;
-    private String email;
-    private String targetPosition;
-    private String education
-    private List<String> skills;
+    private final int id;
+    private final String fullName;
+    private final String phone;
+    private final String email;
+    private final String targetPosition;
+    private final String education
+    private final List<String> skills;
 
     // сеттеры
     public Resume(int id, String fullName, String email, String phone, String targetPosition,
