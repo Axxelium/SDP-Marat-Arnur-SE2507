@@ -1,28 +1,26 @@
+package edu.aitu.sdp.assignment1.model;
+
 import java.util.Collections;
 import java.util.List;
 
 public class Resume {
-    private final int id;
     private final String fullName;
-    private final String phone;
     private final String email;
+    private final String phone;
     private final String targetPosition;
-    private final String education
+    private final String education;
     private final List<String> skills;
 
-    // сеттеры
-    public Resume(int id, String fullName, String email, String phone, String targetPosition,
-                  String summary, String education, List<String> skills) {
-        this.id = id;
+    public Resume(String fullName, String email, String phone,
+                  String targetPosition, String education, List<String> skills) {
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.targetPosition = targetPosition;
-        this.skills = skills;
         this.education = education;
+        this.skills = skills;
     }
 
-    // геттеры
     public String getFullName() { return fullName; }
     public String getEmail() { return email; }
     public String getPhone() { return phone; }
@@ -32,20 +30,12 @@ public class Resume {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("RESUME: ").append(fullName.toUpperCase()).append("\n");
-        sb.append("Position: ").append(targetPosition).append("\n");
-        sb.append("Contacts: ").append(email).append(" | ").append(phone).append("\n");
-        sb.append("Education: ").append(education != null ? education : "Not specified").append("\n");
-
-        sb.append("Skills:\n");
-        if (skills.isEmpty()) {
-            sb.append("  - None specified\n");
-        } else {
-            for (String skill : skills) {
-                sb.append("  * ").append(skill).append("\n");
-            }
-        }
+        return "----------------------------------------\n" +
+                "RESUME: " + fullName.toUpperCase() + "\n" +
+                "Position:  " + targetPosition + "\n" +
+                "Contacts:  " + email + " | " + phone + "\n" +
+                "Education: " + (education != null ? education : "Not specified") + "\n" +
+                "Skills:    " + (skills.isEmpty() ? "None" : String.join(", ", skills)) + "\n" +
+                "----------------------------------------";
     }
-
 }
