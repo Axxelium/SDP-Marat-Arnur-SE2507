@@ -1,5 +1,3 @@
-package edu.aitu.sdp.assignment1.model;
-
 import java.util.Collections;
 import java.util.List;
 

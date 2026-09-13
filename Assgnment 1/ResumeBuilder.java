@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ResumeBuilder implements IResumeBuilder {
-    private static final String DEFAULT_SUMMARY = "Driven specialist eager to contribute and develop professionally.";
     private String fullName;
     private String email;
     private String phone;
@@ -61,37 +60,32 @@ public class ResumeBuilder implements IResumeBuilder {
 
     @Override
     public Resume build() {
-        validateMandatoryFields();
-        applyDefaultValuesIfNecessary();
+        validate();
+        applyDefaults();
 
         return new Resume(
                 fullName,
                 email,
                 phone,
                 targetPosition,
-                summary,
-                new ArrayList<>(skills),
-                new ArrayList<>(experiences),
-                education
+                education,
+                new ArrayList<>(skills)
         );
     }
 
-    private void validateMandatoryFields() {
+    private void validate() {
         if (fullName == null || fullName.isBlank()) {
-            throw new IllegalStateException("Full name is mandatory for a Resume.");
+            throw new IllegalStateException("Validation error: Full name is mandatory.");
         }
         if (email == null || !email.contains("@")) {
-            throw new IllegalStateException("A valid email address is mandatory.");
+            throw new IllegalStateException("Validation error: A valid email address is mandatory.");
         }
         if (targetPosition == null || targetPosition.isBlank()) {
-            throw new IllegalStateException("Target position must be specified.");
+            throw new IllegalStateException("Validation error: Target position must be specified.");
         }
     }
 
-    private void applyDefaultValuesIfNecessary() {
-        if (this.summary == null || this.summary.isBlank()) {
-            this.summary = DEFAULT_SUMMARY;
-        }
+    private void applyDefaults() {
         if (this.phone == null || this.phone.isBlank()) {
             this.phone = "Phone not provided";
         }

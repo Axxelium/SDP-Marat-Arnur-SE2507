@@ -4,36 +4,30 @@ public class ResumeDirector {
     public ResumeDirector(IResumeBuilder builder) {
         this.builder = builder;
     }
-
-    // ПРезюме для студента-стажер
-    public Resume constructStudentInternResume(String candidateName, String candidateEmail) {
+    // Резюме для студента-стажер
+    public Resume constructStudentResume(String name, String email) {
         return builder.reset()
-                .setFullName(candidateName)
-                .setEmail(candidateEmail)
+                .setFullName(name)
+                .setEmail(email)
                 .setTargetPosition("Junior / Intern Software Engineer")
-                .setEducation("BSc Software Engeneering, Astana IT University (Expected 2026)")
+                .setEducation("BSc Software Engineering, Astana IT University")
                 .addSkill("Java Core")
-                .addSkill("OOP & SOLID")
-                .addSkill("Git / GitHub")
-                .addSkill("Data Structures")
+                .addSkill("OOP & Clean Code")
+                .addSkill("Git")
                 .build();
     }
 
-    // Senior разработчик
-    public Resume constructSeniorArchitectResume(String candidateName, String candidateEmail, String candidatePhone) {
+    // Презюме сеньера
+    public Resume constructSeniorResume(String name, String email, String phone) {
         return builder.reset()
-                .setFullName(candidateName)
-                .setEmail(candidateEmail)
-                .setPhone(candidatePhone)
-                .setTargetPosition("Senior Software Engineer / Tech Lead")
-                .setEducation("MSc Software Engineering")
-                .setSummary("Seasoned software architect with 7+ years of experience designing scalable distributed systems.")
-                .addSkill("Microservices Architecture")
-                .addSkill("Java / Spring Boot")
-                .addSkill("Kubernetes & Docker")
-                .addSkill("System Design & GoF Patterns")
-                .addExperience(new WorkExperience("FinTech Corp", "Lead Developer", 36))
-                .addExperience(new WorkExperience("Cloud Solutions Ltd", "Senior Java Engineer", 48))
+                .setFullName(name)
+                .setEmail(email)
+                .setPhone(phone)
+                .setTargetPosition("Senior Java Developer")
+                .setEducation("Higher Technical Degree")
+                .addSkill("Java & Spring Boot")
+                .addSkill("Microservices")
+                .addSkill("Docker / K8s")
                 .build();
     }
 }
