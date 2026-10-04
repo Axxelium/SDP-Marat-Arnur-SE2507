@@ -1,4 +1,13 @@
 package Weapons;
+import Ammo.Ammo;
 
-public class Weapon {
+abstract class Weapon {
+    protected Ammo ammo;
+
+    public Weapon(Ammo ammo) {
+        this.ammo = ammo;
+    }
+
+    public abstract void pullTrigger();
+
 }
