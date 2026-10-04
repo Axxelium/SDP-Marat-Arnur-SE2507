@@ -1,7 +1,7 @@
 package Weapons;
 import Ammo.Ammo;
 
-abstract class Weapon {
+public abstract class Weapon {
     protected Ammo ammo;
 
     public Weapon(Ammo ammo) {
@@ -9,5 +9,10 @@ abstract class Weapon {
     }
 
     public abstract void pullTrigger();
+
+    public void changeAmmo(Ammo newAmmo) {
+        this.ammo = newAmmo;
+        System.out.println("Ammo is updated");
+    }
 
 }
