@@ -21,7 +21,7 @@ public class DrunkFacade {
             counter++;
         } else {
             System.out.println("You have reached the limit\n " +
-                    "this procedures will cause serious harm to your heath");
+                    "this procedures will cause serious harm to your health");
         }
     }
 
