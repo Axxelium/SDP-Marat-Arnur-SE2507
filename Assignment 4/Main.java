@@ -1,9 +1,10 @@
 public class Main {
     public static void main(String[] args){
-        DrunkFacade facade = new DrunkFacade();
-        facade.jarvisMoreAlcohol();
-        facade.jarvisMoreAlcohol();
-        facade.jarvisMoreAlcohol();
-        facade.jarvisMoreAlcohol();
+        DrinkFacade facade = new DrinkFacade();
+        facade.jarvisMoreAlcohol("Vodka + orange juice");
+        facade.jarvisMoreAlcohol("Whiskey + cola");
+        facade.jarvisMoreAlcohol("Martini");
+        facade.jarvisMoreAlcohol("Pure alcohol");
     }
 }
+

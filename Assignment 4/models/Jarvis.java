@@ -1,11 +1,7 @@
 package models;
 
-import interfaces.IDrunk;
-
-public class Jarvis implements IDrunk {
-
-    @Override
-    public void doCocktail() {
-        System.out.println("2. Choosing a cocktail");
+public class Jarvis {
+    public void chooseCocktail(String cocktail) {
+        System.out.println("2. Choosing a cocktail: " + cocktail);
     }
 }
