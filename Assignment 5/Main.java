@@ -4,7 +4,6 @@ import models.ForeignCitizens;
 import models.HomeboundCitizens;
 import models.IndustrialZoneWorkers;
 import models.Population;
-import strategies.CellBroadcastAlert;
 import strategies.SmsBroadcastAlert;
 import strategies.SirenAlert;
 
